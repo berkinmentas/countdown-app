@@ -25,13 +25,12 @@ const CountdownTimer = () => {
         
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
-        // Hedef tarihe ulaşıldıysa zamanı sıfırla
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
     const timer = setInterval(calculateTimeLeft, 1000);
-    calculateTimeLeft(); // İlk hesaplama
+    calculateTimeLeft();
 
     return () => clearInterval(timer);
   }, []);
